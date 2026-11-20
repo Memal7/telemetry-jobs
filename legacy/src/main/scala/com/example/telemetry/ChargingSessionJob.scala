@@ -4,7 +4,8 @@ import org.apache.spark.sql.functions.{col, struct, to_json}
 import org.apache.spark.sql.streaming.{GroupState, GroupStateTimeout, OutputMode}
 import org.apache.spark.sql.{DataFrame, Dataset, SparkSession}
 
-final case class Location(lat: Double, lon: Double)
+/** Either coordinate may be null, like in the input schema. */
+final case class Location(lat: Option[Double], lon: Option[Double])
 
 final case class ChargingEvent(
     event_id: String,
@@ -39,7 +40,9 @@ final case class SessionState(pending: Seq[ChargingEvent], open: Option[Charging
   * `event_id`):
   *   - `charging_start` opens a session, replacing an unfinished one,
   *   - `charging_stop` closes the open session, or is ignored if none is open,
-  *   - a session open longer than [[MaxOpenMs]] is discarded.
+  *   - a session longer than [[MaxOpenMs]] is discarded: its stop closes it
+  *     without output, and an open start expires once the watermark passes
+  *     start + [[MaxOpenMs]].
   *
   * Reads: event_id, vin, event_type, ts_ms, soc_pct, energy_kwh, location.
   * Writes: vin, start_event_id, stop_event_id, start_ts_ms, stop_ts_ms,
@@ -60,7 +63,8 @@ object ChargingSessionJob {
     ordered.foldLeft((Vector.empty[ChargingSession], open)) {
       case ((out, _), e) if e.event_type == Start => (out, Some(e))
       case ((out, Some(start)), e) if e.event_type == Stop =>
-        (out :+ session(vin, start, e), None)
+        if (e.ts_ms - start.ts_ms <= MaxOpenMs) (out :+ session(vin, start, e), None)
+        else (out, None)
       case (acc, _) => acc
     }
 
@@ -107,7 +111,8 @@ object ChargingSessionJob {
     import events.sparkSession.implicits._
     VehicleEvents
       .dropDuplicateEvents(events.where(col("event_type").isin(Start, Stop)), watermark)
-      .select("event_id", "vin", "event_type", "ts_ms", "soc_pct", "energy_kwh", "location")
+      // event_time carries the watermark and must reach the stateful operator.
+      .select("event_id", "vin", "event_type", "ts_ms", "soc_pct", "energy_kwh", "location", "event_time")
       .as[ChargingEvent]
       .groupByKey(_.vin)
       .flatMapGroupsWithState(OutputMode.Append, GroupStateTimeout.EventTimeTimeout)(

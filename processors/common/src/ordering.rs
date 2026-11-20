@@ -45,8 +45,10 @@ mod tests {
             event("z", "V1", 10),
             event("a", "V1", 10),
         ]);
-        let vins: Vec<_> = groups.keys().map(Vin::expose).collect();
-        assert_eq!(vins, ["V1", "V2"]);
+        assert!(
+            groups.keys().map(Vin::expose).eq(["V1", "V2"]),
+            "VINs not in ascending order"
+        );
         let v1: Vec<_> = groups[&Vin::new("V1")]
             .iter()
             .map(|e| e.event_id.as_str())

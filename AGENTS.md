@@ -39,6 +39,8 @@ cargo test --workspace
    `common::Location` (or `common::Redacted`) end to end. Call `expose()`
    only to build output records, never in `println!`/`eprintln!`/log macros,
    error messages, panics or test assertion messages. Log counters only.
+   In tests, compare exposed values with `assert!(a == b, "fixed message")`,
+   not `assert_eq!`, which prints both values when it fails.
 5. **A port is done only when its parity test passes.** The parity test
    replays `fixtures/<job>/input.jsonl` and compares the output with
    `fixtures/<job>/expected.jsonl`. Do not edit `expected.jsonl` to make a
