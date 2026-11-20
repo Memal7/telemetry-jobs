@@ -12,3 +12,7 @@
 {"event_id":"e-ota-050","vin":"SYNTHVIN000000005","event_type":"ota_status","ts_ms":
 {"event_id":"e-ota-040","vin":"SYNTHVIN000000005","event_type":"ota_status","ts_ms":1767225606000,"campaign_id":"ota-2026-02","software_version":"4.3.0","status":"installing"}
 {"event_id":"e-ota-011","vin":"SYNTHVIN000000002","event_type":"ota_status","ts_ms":1767225602500,"campaign_id":"ota-2026-01","software_version":"4.2.0","status":"failed"}
+{"event_id":"e-ota-060","vin":"SYNTHVIN000000006","event_type":"ota_status","ts_ms":1767225607000,"campaign_id":"ota-2026-02","software_version":"4.3.0","status":"installing","location":{}}
+{"event_id":"e-ota-061","vin":"SYNTHVIN000000006","event_type":"ota_status","ts_ms":1767225608000,"campaign_id":"ota-2026-02","software_version":"4.3.0","status":"succeeded","location":{"lat":48.137154}}
+{"event_id":"e-ota-070","vin":"SYNTHVIN000000007","event_type":"ota_status","ts_ms":1767225609000,"campaign_id":"ota-2026-02","software_version":"4.3.0","status":"downloading","soc_pct":"n/a","energy_kwh":[1],"location":"unknown"}
+{"event_id":"e-ota-080","vin":"SYNTHVIN000000008","event_type":"ota_status","ts_ms":1767225610000,"campaign_id":"ota-2026-02","software_version":5,"status":"failed","location":{"lat":"north","lon":11.576124}}

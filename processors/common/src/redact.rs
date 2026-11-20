@@ -75,11 +75,12 @@ impl fmt::Display for Vin {
     }
 }
 
-/// GPS position of the vehicle. Never printed in clear text.
+/// GPS position of the vehicle. Never printed in clear text. A coordinate
+/// is `None` when the input omits it or it is not a number.
 #[derive(Clone, Copy, PartialEq, Serialize, Deserialize)]
 pub struct Location {
-    pub lat: f64,
-    pub lon: f64,
+    pub lat: Option<f64>,
+    pub lon: Option<f64>,
 }
 
 impl fmt::Debug for Location {
@@ -111,8 +112,8 @@ mod tests {
     #[test]
     fn location_is_redacted_in_debug_and_display() {
         let loc = Location {
-            lat: 48.1351,
-            lon: 11.582,
+            lat: Some(48.1351),
+            lon: Some(11.582),
         };
         for text in [format!("{loc:?}"), format!("{loc}")] {
             assert!(!text.contains("48.1351"));
@@ -125,14 +126,20 @@ mod tests {
         let secret = Redacted::new("Main Street 1");
         assert_eq!(format!("{secret:?}"), REDACTED);
         assert_eq!(format!("{secret}"), REDACTED);
-        assert_eq!(*secret.expose(), "Main Street 1");
+        assert!(
+            *secret.expose() == "Main Street 1",
+            "expose() changed the value"
+        );
     }
 
     #[test]
     fn vin_serializes_in_clear_for_output() {
         let json = serde_json::to_string(&Vin::new(VIN)).unwrap();
-        assert_eq!(json, format!("\"{VIN}\""));
+        assert!(
+            json == format!("\"{VIN}\""),
+            "VIN not serialized as a plain string"
+        );
         let back: Vin = serde_json::from_str(&json).unwrap();
-        assert_eq!(back.expose(), VIN);
+        assert!(back.expose() == VIN, "VIN changed in a serde round trip");
     }
 }

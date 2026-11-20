@@ -22,3 +22,6 @@ prints the final output, which is how `fixtures/*/expected.jsonl` is produced:
 ```sh
 sbt "runMain com.example.telemetry.FixtureReplay ota-status ../fixtures/ota-status/input.jsonl"
 ```
+
+`sbt test` runs `ChargingSessionJob` as a real streaming query (memory source
+and sink) to cover event-time state, watermarks and the 24 h session limit.

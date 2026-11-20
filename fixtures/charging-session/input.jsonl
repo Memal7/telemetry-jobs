@@ -11,3 +11,8 @@
 {"event_id":"e-chg-099","vin":"SYNTHVIN000000003","event_type":"charging_stop","ts_ms":"late"}
 {"event_id":"e-chg-013","vin":"SYNTHVIN000000002","event_type":"charging_stop","ts_ms":1767227500000,"soc_pct":55.0,"energy_kwh":30.25,"location":{"lat":52.520008,"lon":13.404954}}
 {"event_id":"e-chg-020","vin":"SYNTHVIN000000003","event_type":"charging_start","ts_ms":1767229600000,"soc_pct":40.0,"location":{"lat":50.110924,"lon":8.682127}}
+{"event_id":"e-chg-030","vin":"SYNTHVIN000000004","event_type":"charging_start","ts_ms":1767225600000,"soc_pct":10.0,"location":{"lat":48.137154,"lon":11.576124}}
+{"event_id":"e-chg-031","vin":"SYNTHVIN000000004","event_type":"charging_stop","ts_ms":1767315600000,"soc_pct":90.0,"energy_kwh":60.0,"location":{"lat":48.137154,"lon":11.576124}}
+{"event_id":"e-chg-032","vin":"SYNTHVIN000000004","event_type":"charging_stop","ts_ms":1767319200000,"soc_pct":91.0,"energy_kwh":0.5,"location":{"lat":48.137154,"lon":11.576124}}
+{"event_id":"e-chg-040","vin":"SYNTHVIN000000005","event_type":"charging_start","ts_ms":1767225600000,"soc_pct":25.0,"location":{}}
+{"event_id":"e-chg-041","vin":"SYNTHVIN000000005","event_type":"charging_stop","ts_ms":1767229200000,"soc_pct":75.0,"energy_kwh":35.0,"location":{"lat":52.520008}}
