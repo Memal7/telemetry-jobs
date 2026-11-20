@@ -11,6 +11,7 @@ synthetic.
   - `common/` — event parsing, de-duplication by `event_id`, per-VIN
     ordering, `Vin`/`Location`/`Redacted` types that never print their value.
   - `ota-status/` — Rust port of `OtaStatusJob`; the reference port.
+  - `charging-session/` — Rust port of `ChargingSessionJob`.
 - `fixtures/<job>/` — `input.jsonl` (synthetic events, incl. out-of-order,
   duplicate and malformed lines) and `expected.jsonl` (legacy job output).
 

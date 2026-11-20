@@ -1,6 +1,6 @@
 [workspace]
 resolver = "2"
-members = ["common", "ota-status"]
+members = ["common", "ota-status", "charging-session"]
 
 [workspace.package]
 edition = "2021"

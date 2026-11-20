@@ -3,6 +3,15 @@
 version = 4
 
 [[package]]
+name = "charging-session"
+version = "0.1.0"
+dependencies = [
+ "common",
+ "serde",
+ "serde_json",
+]
+
+[[package]]
 name = "common"
 version = "0.1.0"
 dependencies = [

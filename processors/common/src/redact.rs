@@ -79,7 +79,9 @@ impl fmt::Display for Vin {
 /// is `None` when the input omits it or it is not a number.
 #[derive(Clone, Copy, PartialEq, Serialize, Deserialize)]
 pub struct Location {
+    #[serde(default, skip_serializing_if = "Option::is_none")]
     pub lat: Option<f64>,
+    #[serde(default, skip_serializing_if = "Option::is_none")]
     pub lon: Option<f64>,
 }
 
@@ -119,6 +121,16 @@ mod tests {
             assert!(!text.contains("48.1351"));
             assert!(!text.contains("11.582"));
         }
+    }
+
+    #[test]
+    fn location_omits_missing_coordinates_in_output() {
+        let loc = Location {
+            lat: Some(1.5),
+            lon: None,
+        };
+        let json = serde_json::to_string(&loc).unwrap();
+        assert!(json == r#"{"lat":1.5}"#, "unexpected location JSON");
     }
 
     #[test]
