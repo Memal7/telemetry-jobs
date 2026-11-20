@@ -1,0 +1,14 @@
+{"event_id":"e-ota-001","vin":"SYNTHVIN000000001","event_type":"ota_status","ts_ms":1767225601000,"campaign_id":"ota-2026-01","software_version":"4.2.0","status":"downloading"}
+{"event_id":"e-chg-900","vin":"SYNTHVIN000000001","event_type":"charging_start","ts_ms":1767225601200,"soc_pct":35.0,"location":{"lat":48.137154,"lon":11.576124}}
+{"event_id":"e-ota-003","vin":"SYNTHVIN000000001","event_type":"ota_status","ts_ms":1767225603000,"campaign_id":"ota-2026-01","software_version":"4.2.0","status":"succeeded"}
+{"event_id":"e-ota-010","vin":"SYNTHVIN000000002","event_type":"ota_status","ts_ms":1767225601500,"campaign_id":"ota-2026-01","software_version":"4.2.0","status":"downloading"}
+{"event_id":"e-ota-002","vin":"SYNTHVIN000000001","event_type":"ota_status","ts_ms":1767225602000,"campaign_id":"ota-2026-01","software_version":"4.2.0","status":"installing"}
+{"event_id":"e-ota-012","vin":"SYNTHVIN000000002","event_type":"ota_status","ts_ms":1767225603500,"campaign_id":"ota-2026-02","software_version":"4.3.0","status":"downloading"}
+{"event_id":"e-ota-003","vin":"SYNTHVIN000000001","event_type":"ota_status","ts_ms":1767225603000,"campaign_id":"ota-2026-01","software_version":"4.2.0","status":"succeeded"}
+{"event_id":"e-ota-011","vin":"SYNTHVIN000000002","event_type":"ota_status","ts_ms":1767225602500,"campaign_id":"ota-2026-01","software_version":"4.2.0","status":"failed"}
+{"event_id":"e-ota-021","vin":"SYNTHVIN000000003","event_type":"ota_status","ts_ms":1767225604000,"campaign_id":"ota-2026-02","software_version":"4.3.0","status":"succeeded"}
+{"event_id":"e-ota-020","vin":"SYNTHVIN000000003","event_type":"ota_status","ts_ms":1767225604000,"campaign_id":"ota-2026-02","software_version":"4.3.0","status":"installing"}
+{"event_id":"e-ota-030","vin":"SYNTHVIN000000004","event_type":"ota_status","ts_ms":1767225605000,"campaign_id":"ota-2026-02","software_version":"4.3.0"}
+{"event_id":"e-ota-050","vin":"SYNTHVIN000000005","event_type":"ota_status","ts_ms":
+{"event_id":"e-ota-040","vin":"SYNTHVIN000000005","event_type":"ota_status","ts_ms":1767225606000,"campaign_id":"ota-2026-02","software_version":"4.3.0","status":"installing"}
+{"event_id":"e-ota-011","vin":"SYNTHVIN000000002","event_type":"ota_status","ts_ms":1767225602500,"campaign_id":"ota-2026-01","software_version":"4.2.0","status":"failed"}

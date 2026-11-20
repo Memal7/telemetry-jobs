@@ -1,0 +1,4 @@
+{"vin":"SYNTHVIN000000001","campaign_id":"ota-2026-01","software_version":"4.2.0","status":"succeeded","status_ts_ms":1767225603000,"source_event_id":"e-ota-003"}
+{"vin":"SYNTHVIN000000002","campaign_id":"ota-2026-02","software_version":"4.3.0","status":"downloading","status_ts_ms":1767225603500,"source_event_id":"e-ota-012"}
+{"vin":"SYNTHVIN000000003","campaign_id":"ota-2026-02","software_version":"4.3.0","status":"succeeded","status_ts_ms":1767225604000,"source_event_id":"e-ota-021"}
+{"vin":"SYNTHVIN000000005","campaign_id":"ota-2026-02","software_version":"4.3.0","status":"installing","status_ts_ms":1767225606000,"source_event_id":"e-ota-040"}

@@ -1,0 +1,5 @@
+target/
+.bsp/
+.scala-build/
+legacy/project/target/
+legacy/project/project/

@@ -1,0 +1,13 @@
+{"event_id":"e-chg-002","vin":"SYNTHVIN000000001","event_type":"charging_stop","ts_ms":1767229200000,"soc_pct":80.0,"energy_kwh":42.5,"location":{"lat":48.137154,"lon":11.576124}}
+{"event_id":"e-chg-001","vin":"SYNTHVIN000000001","event_type":"charging_start","ts_ms":1767225600000,"soc_pct":20.0,"location":{"lat":48.137154,"lon":11.576124}}
+{"event_id":"e-chg-010","vin":"SYNTHVIN000000002","event_type":"charging_stop","ts_ms":1767225650000,"soc_pct":60.0,"energy_kwh":10.0,"location":{"lat":52.520008,"lon":13.404954}}
+{"event_id":"e-chg-002","vin":"SYNTHVIN000000001","event_type":"charging_stop","ts_ms":1767229200000,"soc_pct":80.0,"energy_kwh":42.5,"location":{"lat":48.137154,"lon":11.576124}}
+{"event_id":"e-chg-011","vin":"SYNTHVIN000000002","event_type":"charging_start","ts_ms":1767225700000,"soc_pct":15.0,"location":{"lat":52.520008,"lon":13.404954}}
+{"event_id":"e-ota-100","vin":"SYNTHVIN000000001","event_type":"ota_status","ts_ms":1767230600000,"campaign_id":"ota-2026-02","software_version":"4.3.0","status":"downloading"}
+{"event_id":"e-chg-004","vin":"SYNTHVIN000000001","event_type":"charging_stop","ts_ms":1767234600000,"soc_pct":95.0,"energy_kwh":18.75,"location":{"lat":50.110924,"lon":8.682127}}
+{"event_id":"e-chg-012","vin":"SYNTHVIN000000002","event_type":"charging_start","ts_ms":1767225800000,"soc_pct":15.5,"location":{"lat":52.520008,"lon":13.404954}}
+{"event_id":"e-chg-003","vin":"SYNTHVIN000000001","event_type":"charging_start","ts_ms":1767232800000,"soc_pct":70.0,"location":{"lat":50.110924,"lon":8.682127}}
+{"event_id":"e-chg-012","vin":"SYNTHVIN000000002","event_type":"charging_start","ts_ms":1767225800000,"soc_pct":15.5,"location":{"lat":52.520008,"lon":13.404954}}
+{"event_id":"e-chg-099","vin":"SYNTHVIN000000003","event_type":"charging_stop","ts_ms":"late"}
+{"event_id":"e-chg-013","vin":"SYNTHVIN000000002","event_type":"charging_stop","ts_ms":1767227500000,"soc_pct":55.0,"energy_kwh":30.25,"location":{"lat":52.520008,"lon":13.404954}}
+{"event_id":"e-chg-020","vin":"SYNTHVIN000000003","event_type":"charging_start","ts_ms":1767229600000,"soc_pct":40.0,"location":{"lat":50.110924,"lon":8.682127}}
