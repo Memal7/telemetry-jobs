@@ -249,6 +249,12 @@ mod tests {
         assert_eq!(event.campaign_id.as_deref(), Some("true"));
         assert_eq!(event.software_version.as_deref(), Some("7"));
         assert_eq!(event.status.as_deref(), Some(r#"{"a":[1,"b"]}"#));
+        let reordered =
+            r#"{"event_id":{"b":1,"a":2},"vin":"V","event_type":"ota_status","ts_ms":1}"#;
+        assert_eq!(
+            parse_line(reordered, 1).unwrap().event_id,
+            r#"{"b":1,"a":2}"#
+        );
         let null_status = parse_line(&ota(r#","status":null"#), 1).unwrap();
         assert_eq!(null_status.status, None);
     }
